@@ -20,9 +20,11 @@ const server = http.createServer((req, res) => {
       data = parseInt(data);
     }
     data += 1;
-    fs.writeFile('/data/count.txt', data, 'utf8', () => {
-      if (err) throw err;
-        res.end(`Hostname: ${process.env.HOSTNAME}\nCount: ${data}\n`);
+    fs.writeFile('/data/count.txt', data, 'utf8', (err) => {
+      if (err) {
+        data = err.toString();
+      }
+      res.end(`Hostname: ${process.env.HOSTNAME}\nCount: ${data}\n`);
     });
   });
 });
