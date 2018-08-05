@@ -13,6 +13,5 @@ pipeline:
     host: 192.168.33.13
     port: 22
     username: vagrant
-    password: vagrant
     script: 'env|sort'
     
