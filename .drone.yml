@@ -8,5 +8,5 @@ pipeline:
     image: alpine
     commands:
       - env
-      - nslookup ya.ru
+      - apk add curl
       - curl ip.spuf.ru
