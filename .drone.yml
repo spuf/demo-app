@@ -1,0 +1,18 @@
+clone:
+  git:
+    image: plugins/git
+    depth: 1
+
+pipeline:
+  build:
+    image: alpine
+    commands:
+      - env | sort
+  deploy:
+    image: appleboy/drone-ssh
+    host: 192.168.33.13
+    port: 22
+    username: vagrant
+    secrets: [ ssh_key ]
+    script: 'env|sort'
+    
