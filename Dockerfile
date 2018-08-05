@@ -2,7 +2,8 @@ FROM node:10-alpine
 WORKDIR /app
 COPY . .
 
-ENV PORT=4000
+ENV PORT=4000 \
+    DATADIR=/data
 
 VOLUME /data
 EXPOSE 4000
