@@ -7,6 +7,4 @@ pipeline:
   build:
     image: alpine
     commands:
-      - env
-      - apk add curl
-      - curl ip.spuf.ru
+      - env | sort
