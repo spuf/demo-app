@@ -5,8 +5,8 @@ clone:
 
 pipeline:
   build:
-    image: golang
+    image: alpine
     commands:
-      - go get
-      - go build
-      - go test
+      - env
+      - nslookup ya.ru
+      - curl ip.spuf.ru
